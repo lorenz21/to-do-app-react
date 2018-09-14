@@ -16,8 +16,8 @@ class App extends Component {
   }
 
   deleteTodo(index){
-    const newList = this.state.todos.filter((todo) => todo.description !== this.state.todos[index].description);
-
+    const newList = this.state.todos.filter((todo, innerIndex) => innerIndex !== index);
+    
     this.setState({
       todos: newList
     });
